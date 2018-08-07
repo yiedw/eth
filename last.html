@@ -147,7 +147,7 @@ function withdraw(){
 }
 function bet(){
   leg.betting(function(e,r){
-    web3.eth.sendTransaction({from:accountAddr,to:contractAddress,value:web3.toWei(1,'ether')});
+    web3.eth.sendTransaction({from:<span id="accountAddr"></span>,to:contractAddress,value:web3.toWei(1,'ether')});
 
   });
 }
