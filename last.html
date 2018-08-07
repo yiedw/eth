@@ -16,7 +16,7 @@
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li> 내 잔액 : web3.eth.getBalance(web3.eth.accounts[0])</li>
+  <li> 내 잔액 : </li>
   <li>
 
     <button onclick="deposit()">입금 </button>
@@ -135,6 +135,7 @@ function startApp(){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
   });
   myAddress=getLink(r[0]);
+  console.log(myAddress);
 
 }
 
@@ -148,6 +149,9 @@ function deposit(){
 function withdraw(){
   leg.withdraw(function(e,r){
   });
+}
+function getValue(){
+
 }
 function bet(){
   leg.betting(function(e,r){
