@@ -159,8 +159,8 @@ function bet(){
       myAddress=r[0];
       web3.eth.sendTransaction(function(e,r){
         from: myAddress,
-        gasPrice: "20000000000",
-        gas: "21000",
+        gasPrice: 20000000000,
+        gas: 21000,
         to: contractAddress,
         value: (0.1,'ether')
    }, function(err, transactionHash) {
