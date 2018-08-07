@@ -114,6 +114,7 @@ var abi=[
 ];
 var legContract;
 var leg;
+var myAddress;
 window.addEventListener('load',function(){
   if(typeof web3 !=='undefined'){
     window.web3=new Web3(web3.currentProvider);
@@ -131,6 +132,7 @@ function startApp(){
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
   });
+  myAddress=<span id="accountAddr"></span>;
 
 }
 
@@ -147,7 +149,8 @@ function withdraw(){
 }
 function bet(){
   leg.betting(function(e,r){
-    web3.eth.sendTransaction({from:<span id="accountAddr"></span>,to:contractAddress,value:web3.toWei(1,'ether')});
+    web3.eth.sendTransaction({from:myAddress,to:contractAddress,
+    value:web3.toWei(1,'ether')});
 
   });
 }
