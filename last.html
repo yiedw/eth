@@ -158,11 +158,11 @@ function bet(){
     web3.eth.getAccounts(function(e,r){
       myAddress=r[0];
       web3.eth.sendTransaction(function(e,r){
-        from: this._account,
-    gasPrice: "20000000000",
-    gas: "21000",
-    to: textetheraddress,
-    value: textetheramount
+        from: myAddress,
+        gasPrice: "20000000000",
+        gas: "21000",
+        to: contractAddress,
+        value: (0.1,'ether')
    }, function(err, transactionHash) {
     if (!err)
       console.log(transactionHash);
