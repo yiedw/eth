@@ -16,11 +16,11 @@
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li>컨트랙트에 저장된 값: <span id="storedData"></span>
-    <button onclick="withdraw()">출금 </button> (현재블록: <span id="lastBlock"></span>)</li>
+
+    <button onclick="deposit()">입금 </button>
+    <button onclick="withdraw()">출금 </button> </li>
   <li><input id="newValue" type="text"><button onclick="bet()">배팅</button>
       <div id="result"></div></li>
-  <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
 
 </body>
@@ -28,7 +28,6 @@
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 
 <script>
-console.log("6");
 var contractAddress='0xb3176a9388d3b1ac406aecc78c5e50092c456541';
 var abi=[
 	{
@@ -107,7 +106,6 @@ var abi=[
 		"type": "function"
 	}
 ];
-console.log("7");
 var legContract;
 var leg;
 window.addEventListener('load',function(){
@@ -118,7 +116,6 @@ window.addEventListener('load',function(){
     window.web3== new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
   }
   startApp();
-  console.log("12343");
 });
 
 function startApp(){
@@ -127,7 +124,6 @@ function startApp(){
   document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
-    console.log("123");
   });
 
 }
