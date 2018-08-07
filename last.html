@@ -132,7 +132,7 @@ function startApp(){
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
   });
-  myAddress=<span id="accountAddr"></span>;
+  myAddress=getLink(r[0]);
 
 }
 
