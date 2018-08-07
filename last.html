@@ -133,7 +133,7 @@ function startApp(){
   document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
-    storage myAddress=r[0];
+    myAddress=r[0];
   }
 );
 console.log(myAddress);
