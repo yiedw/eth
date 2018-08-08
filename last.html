@@ -137,6 +137,7 @@ function startApp(){
 );
 myAddress=web3.eth.accounts[0];
 console.log(myAddress);
+console.log(web3.eth.coinbase);
 
 }
 
@@ -145,6 +146,7 @@ function getLink(addr){
 }
 function deposit(){
   leg.deposit(function(e,r){
+
   });
 }
 function withdraw(){
