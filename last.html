@@ -24,10 +24,10 @@
     <div class="betting">
   <li>
     <button onclick value=value1-0.1>-</button>
-    <input type="text" value=0.1>
+    <input type="text" name="price" value=0.1>
     <button onclick value=value1+1>+</button>
 
-    <button onclick="bet()">배팅</button>
+    <button name="betting" onclick="bet()">배팅</button>
   </div></li>
 </ul>
 
@@ -117,6 +117,8 @@ var abi=[
 var legContract;
 var leg;
 var myAddress;
+var price1=document.price1;
+console.log(price1.price.value);
 window.addEventListener('load',function(){
   if(typeof web3 !=='undefined'){
     window.web3=new Web3(web3.currentProvider);
@@ -126,6 +128,7 @@ window.addEventListener('load',function(){
   }
   startApp();
 });
+
 
 function startApp(){
   legContract=web3.eth.contract(abi);
