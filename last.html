@@ -14,7 +14,6 @@
 <body>
 <h3>다리다리 게임!</h3>
 <ul>
-  var value1=0.1;
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
   <li> 내 잔액 : </li>
@@ -118,7 +117,7 @@ var abi=[
 var legContract;
 var leg;
 var myAddress;
-var value;
+var value1=0.1;
 window.addEventListener('load',function(){
   if(typeof web3 !=='undefined'){
     window.web3=new Web3(web3.currentProvider);
