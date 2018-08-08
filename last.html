@@ -36,7 +36,7 @@
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 
 <script>
-var contractAddress='0xb3176a9388d3b1ac406aecc78c5e50092c456541';
+var contractAddress='0xef55bfac4228981e850936aaf042951f7b146e41';
 var abi=[
 	{
 		"constant": false,
@@ -58,7 +58,16 @@ var abi=[
 	},
 	{
 		"constant": false,
-		"inputs": [],
+		"inputs": [
+			{
+				"name": "contractAddr",
+				"type": "address"
+			},
+			{
+				"name": "value",
+				"type": "uint256"
+			}
+		],
 		"name": "deposit",
 		"outputs": [],
 		"payable": true,
