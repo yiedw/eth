@@ -164,7 +164,7 @@ function getValue(){
 }
 function bet(){
   var betPrice=document.getElementById("price").value;
-  temp=betpricel;
+  temp=betPrice;
   leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
     /*web3.eth.getAccounts(function(e,r){
       myAddress=r[0];
