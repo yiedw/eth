@@ -154,10 +154,13 @@ console.log(web3.eth.coinbase);
 function getLink(addr){
   return '<a target="_blank" href=https://rinkeby.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
+
 function deposit(value){
   leg.deposit(contractAddress,web3.toWei(value,'ether'),function(e,r){
     console.log('deposit');
-  }}
+  })
+}
+
 
 
 function withdraw(){
