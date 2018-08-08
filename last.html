@@ -36,7 +36,7 @@
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 
 <script>
-var contractAddress='0x8504791099bA2ab48338A70d90Cc0af88a102806';
+var contractAddress='0x6880bbb4169eeeec92df82d2d16ea3c52fbb00bf';
 var abi=[
 	{
 		"constant": false,
@@ -59,39 +59,10 @@ var abi=[
 	{
 		"constant": false,
 		"inputs": [],
-		"name": "deposit",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"constant": false,
-		"inputs": [],
 		"name": "withdraw",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "balance1",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -112,6 +83,35 @@ var abi=[
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "balance1",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "deposit",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	}
 ];
 var legContract;
@@ -147,10 +147,8 @@ function getLink(addr){
 }
 
 function deposit(){
-  web3.eth.sendTransaction({
-    to:contractAddress,value:web3.toWei(1,'ether')},function(e,r){
-      console.log("deposit");
-    })
+  leg.deposit({gas: 3000000, value: web3.toWei(0.1, 'ether')},
+   function(e,r){});
 }
 
 
