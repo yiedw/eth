@@ -24,7 +24,7 @@
     <div class="betting">
   <li>
     <button onclick value=value-0.1>-</button>
-    <input type="text" name="price" value=0.1>
+    <input type="text" id="price" value=0.1>
     <button onclick value=value+1>+</button>
 
     <button name="betting" onclick="bet()">배팅</button>
@@ -117,7 +117,8 @@ var abi=[
 var legContract;
 var leg;
 var myAddress;
-console.log(this['price'].value
+var temp;
+
 window.addEventListener('load',function(){
   if(typeof web3 !=='undefined'){
     window.web3=new Web3(web3.currentProvider);
@@ -162,8 +163,9 @@ function getValue(){
 
 }
 function bet(){
-  leg.betting({value: web3.toWei(0.1, 'ether')},function(e,r){
-    console.log
+  var betPrice=document.getElementById("price").value;
+  temp=betpricel;
+  leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
     /*web3.eth.getAccounts(function(e,r){
       myAddress=r[0];
       console.log(myAddress);
