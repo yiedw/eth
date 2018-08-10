@@ -16,7 +16,7 @@
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li> 내 잔액 : </li>
+  <li> 내 잔액 :  <span id= "accountMount"></span> </li>
   <li>
 
     <button onclick="deposit()">입금 </button>
@@ -134,11 +134,10 @@ function startApp(){
   document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
+    document.getElementById('accountMount').innerHTML=web3.eth.getBalance(web3.eth.coinbase,(e,r)=>{
+    console.log(r.c[0]/10000)})
   }
 );
-myAddress=web3.eth.accounts[0];
-console.log(myAddress);
-console.log(web3.eth.coinbase);
 
 }
 
@@ -164,17 +163,7 @@ function bet(){
   var betPrice=document.getElementById("price").value;
   temp=betPrice;
   leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
-    /*web3.eth.getAccounts(function(e,r){
-      myAddress=r[0];
-      console.log(myAddress);
-      web3.eth.sendTransaction(
-        from:myAddress,
-        to:contractAddress
-        value:web3.toWei(0.1,'ether'),
-        function(e,r){
-          console.log(contractAddress);
-        });
-  });*/
+
 
   })
 
