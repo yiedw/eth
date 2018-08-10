@@ -134,9 +134,10 @@ function startApp(){
   document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
-    document.getElementById('accountMount').innerHTML=web3.eth.getBalance(web3.eth.coinbase,(e,r)=>{
-    console.log(r.c[0]/10000)})
   }
+  web3.eth.getBalance(web3.eth.coinbase,(e,r)=>{
+    document.getElementById('accountMount').innerHTML=r.c[0]/10000;
+  })
 );
 
 }
