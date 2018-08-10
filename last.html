@@ -168,7 +168,7 @@ function startApp(){
   leg=legContract.at(contractAddress);
   document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
   web3.eth.getBalance(contractAddress,(e,r)=>{
-  document.getElementById('maxBet')=web3.fromWei(r.toNumber(),'ether');
+  document.getElementById('maxBet').innerHTML=web3.fromWei(r.toNumber(),'ether')/2;
 });
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
