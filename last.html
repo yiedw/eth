@@ -198,11 +198,11 @@ function getValue(){
 function bet(){
   var betPrice=document.getElementById("price").value;
   temp=betPrice;
+  if(temp<contractAddress/2){
+    leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
 
-  leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
-
-
-  })
+    }
+  )}
 
 }
 
