@@ -15,7 +15,7 @@
 <h3>다리다리 게임!</h3>
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
-  <li>내 어카운트 주소: <span id="accountAddr"></span></li>
+  <li>내 어카운트 주소: <span id="accountAddr"></span> ether </li>
   <li> 내 잔액 :  <span id= "accountMount"></span> </li>
   <li>
 
@@ -135,7 +135,7 @@ function startApp(){
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
     web3.eth.getBalance(r[0],(e,b)=>{
-      document.getElementById('accountMount').innerHTML=b.c[0]/1000;
+      document.getElementById('accountMount').innerHTML=b.c[0]/10000;
     })
   });
 };
