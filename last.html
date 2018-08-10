@@ -25,7 +25,7 @@
   <li>
     <input type="text" id="price" value=0.1>
 
-    <button name="betting" onclick="bet()">배팅</button>
+    <button name="betting" onclick="bet()">배팅</button> (최대배팅금액:<span id="maxBet"></span> ether)
   </div></li>
 </ul>
 
@@ -175,6 +175,7 @@ function startApp(){
       document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
     })
   });
+  document.getElementById('maxBet').innerHTML=contractBalance/2;
 };
 
 function getLink(addr){
@@ -198,7 +199,6 @@ function getValue(){
 function bet(){
   var betPrice=document.getElementById("price").value;
   temp=betPrice;
-  //if(temp<contractAddress/2){
     leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
 
     }
