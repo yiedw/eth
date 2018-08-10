@@ -150,6 +150,7 @@ var legContract;
 var leg;
 var myAddress;
 var temp;
+var contractBalance;
 
 window.addEventListener('load',function(){
   if(typeof web3 !=='undefined'){
@@ -166,10 +167,12 @@ function startApp(){
   legContract=web3.eth.contract(abi);
   leg=legContract.at(contractAddress);
   document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
+  contractBalance=web3.eth.getBalance(contractAddress,(e,r)=>{web3.fromWei(r.toNumber(),'ether');
+});
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML=getLink(r[0]);
     web3.eth.getBalance(r[0],(e,b)=>{
-      document.getElementById('accountMount').innerHTML=b.c[0]/10000;
+      document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
     })
   });
 };
@@ -195,6 +198,7 @@ function getValue(){
 function bet(){
   var betPrice=document.getElementById("price").value;
   temp=betPrice;
+
   leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
 
 
