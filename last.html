@@ -15,6 +15,7 @@
     }
     .basic{
       width:calc(50% - 10px);
+      margin-right: 50px;
     }
 
     .tx{
@@ -48,6 +49,9 @@
 
 <section class="tx">
 <h4> Transaction </h4>
+<div>
+  tx: <span id="txhash"></span>
+</div>
 
 </section>
 
@@ -216,24 +220,22 @@ function deposit(){
    function(e,r){});
 }
 
-
-
 function withdraw(){
   leg.withdraw(function(e,r){
   });
 }
-function getValue(){
 
-}
 function bet(){
   var betPrice=document.getElementById("price").value;
   temp=betPrice;
+  document.getElementById('txhash').innerHTML=getLink(
     leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
 
     }
   )
 
 }
+)
 
 
 </script>
