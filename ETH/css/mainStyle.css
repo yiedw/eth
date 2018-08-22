@@ -26,13 +26,15 @@
 #legRoll {
 	padding-top: 5%;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 }
 #betting{
 	text-align:left;
+	width:calc(50%);
 }
 #transaction{
 	text-align: center;
+	width:calc(50%);
 }
 #betting>section{
 	width:calc(50%);
