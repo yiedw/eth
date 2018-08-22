@@ -14,16 +14,22 @@
 	justify-content: center;
 	padding-top: 3%;
 }
-#game>section{
-width:calc(25%);
-text-align: center;'
+
+#game>section {
+	width: calc(25%);
+	text-align: center;
+	'
 }
 
-#betting{
+#betting {
 	text-align: left;
-    padding-top: 5%;
-    display:flex;
-	}
-	#betting>#gameTitle{
+	padding-top: 5%;
+	display: flex;
+}
+#betting>section{
+	width:calc(50%);
+}
+
+#legRoll>#betting>#gameTitle {
 	font-size: 10px;
-	}
+}
