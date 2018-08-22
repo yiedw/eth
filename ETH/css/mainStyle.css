@@ -18,9 +18,12 @@
 width:calc(25%);
 text-align: center;'
 }
-#gameStyle{
+
+#betting{
 	text-align: left;
     padding-top: 5%;
-    font-size: 30px;
-
+    display:flex;
+	}
+	#betting>#gameTitle{
+	font-size: 10px;
 	}

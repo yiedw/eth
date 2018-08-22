@@ -35,19 +35,21 @@
 	
 <div id=legRoll>
 	<section id="betting">
-		LegRoll 	<br />
+		<span id = gameTitle>LegRoll 	<br /> </span>
 		<li>내 잔액 : <span id="accountMount"></span> ether </li> <br />
 		<input type="text" id="percent" value=50> <br>
 		<input type="text" id="betPrice" value=0.01>
 		<button name="bet" onclick="bet()">Betting</button>
-		최대배팅금액: <span id="maxBet"> </span> ether ) <br> 
+		(최대배팅금액: <span id="maxBet"> </span> ether ) <br> 
 	</section>
 	
+	<section>
 	
 	<li>컨트랙트 주소: <span id="contractAddr"></span></li>
 	<li>내 어카운트 주소: <span id="accountAddr"></span></li>
 	<li>tx : <span id="txhash"></span></li>
 	</li>
+	</section>
 </div>
 </body>
 <script
