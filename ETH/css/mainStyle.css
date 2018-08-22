@@ -18,7 +18,7 @@
 #game>section {
 	width: calc(25%);
 	text-align: center;
-	'
+	
 }
 
 #betting {
@@ -28,8 +28,9 @@
 }
 #betting>section{
 	width:calc(50%);
+	text-align: center;
 }
 
-#legRoll>#betting>#gameTitle {
-	font-size: 10px;
+#gameTitle {
+	font-size: 30px;
 }
