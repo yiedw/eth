@@ -21,10 +21,15 @@
 	
 }
 
+
+
 #legRoll {
 	padding-top: 5%;
 	display: flex;
 	justify-content: center;
+}
+#betting{
+	text-align:left;
 }
 #transaction{
 	text-align: center;
