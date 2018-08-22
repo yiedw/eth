@@ -175,7 +175,7 @@ function bet() {
 	temp=betPrice;
     leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
         document.getElementById("txhash").innerHTML=getLink(r)
-      }
+      });
 }
 
 </script>
