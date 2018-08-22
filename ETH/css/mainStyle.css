@@ -1,0 +1,20 @@
+#title {
+	text-align: center;
+}
+
+#title1 {
+	color: black;
+	text-decoration: none;
+	font-size: 60px;
+}
+
+#game {
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	padding-top: 3%;
+}
+#game>section{
+width:calc(25%);
+text-align: center;'
+}
