@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="/ETH/css/mainStyle.css">
+<link rel="stylesheet"
+	href="https:yiedw.github.io/ETH/css/mainStyle.css">
 
-<title>game1</title>
+<title>ETH * x</title>
+
 </head>
+
+
 <body>
 
 	<div id="title">
@@ -14,13 +18,165 @@
 	</div>
 
 	<div id="game">
-		<section><a href=game1.html>game1</a></section>
-		<section><a href=game2.html>game2</a></section>
-		<section><a href=game3.html>game3</a></section>
-		<section><a href=game4.html>game4</a></section>
+		<section>
+			<a href=game1.html>game1</a>
+		</section>
+		<section>
+			<a href=game2.html>game2</a>
+		</section>
+		<section>
+			<a href=game3.html>game3</a>
+		</section>
+		<section>
+			<a href=game4.html>game4</a>
+		</section>
 
 	</div>
 
+	<div id="betting">
+		<input type="text" id="betPrice" value=0.01>
+		<button name="bet" onclick="game1()">Betting</button>
+		최대배팅금액: <span id="maxBet"> </span> ether ) <br> tx : <span
+			id="txhash"></span>
+	</div>
+	<li>컨트랙트 주소: <span id="contractAddr"></span></li>
+	<li>내 어카운트 주소: <span id="accountAddr"></span></li>
+	<li>내 잔액 : <span id="accountMount"></span> ether
+	</li>
+
 </body>
-</html>
+<script
+	src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+
+<script>
+var contractAddress="0x206b3bbcec2377612b277273f3edc00843da7feb";
+var abi=[
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "deposit",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "beneficiary",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "Failed",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "inputNum",
+				"type": "uint256"
+			}
+		],
+		"name": "game1",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "beneficiary",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "Successed",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "checkBalance",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+var temp;
+
+window.addEventListener('load',function(){
+	  if(typeof web3 !=='undefined'){
+	    window.web3=new Web3(web3.currentProvider);
+	  } else{
+	    console.log('No web3? you should consider trying MetaMask!')
+	    window.web3== new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+	  }
+	  startApp();
+	});
+
+
+function startApp(){
+	  legContract=web3.eth.contract(abi);
+	  leg=legContract.at(contractAddress);
+	  document.getElementById('contractAddr').innerHTML=getLink(contractAddress);
+	  web3.eth.getBalance(contractAddress,(e,r)=>{
+	  document.getElementById('maxBet').innerHTML=web3.fromWei(r.toNumber(),'ether')/2;
+	});
+	  web3.eth.getAccounts(function(e,r){
+	    document.getElementById('accountAddr').innerHTML=getLink(r[0]);
+	    web3.eth.getBalance(r[0],(e,b)=>{
+	      document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
+	    })
+	  });
+	};
+
+function getLink(addr){
+	  return '<a target="_blank" href=https://rinkeby.etherscan.io/address/' + addr + '>' + addr +'</a>';
+	}
+
+function bet() {
+	var betPrice=document.getElementById("price").value;
+	temp=betPrice;
+    leg.betting({value: web3.toWei(temp, 'ether')},function(e,r){
+        document.getElementById("txhash").innerHTML=getLink(r)
+      }
+
+
+</script>
 </html>
