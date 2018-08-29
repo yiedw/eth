@@ -22,9 +22,9 @@ var abi=[
 				"name": "amount",
 				"type": "uint256"
 			}
-		],
-		"name": "Failed",
-		"type": "event"
+			],
+			"name": "Failed",
+			"type": "event"
 	},
 	{
 		"constant": false,
@@ -33,12 +33,12 @@ var abi=[
 				"name": "inputNum",
 				"type": "uint256"
 			}
-		],
-		"name": "game1",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
+			],
+			"name": "game1",
+			"outputs": [],
+			"payable": true,
+			"stateMutability": "payable",
+			"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -53,9 +53,9 @@ var abi=[
 				"name": "amount",
 				"type": "uint256"
 			}
-		],
-		"name": "Successed",
-		"type": "event"
+			],
+			"name": "Successed",
+			"type": "event"
 	},
 	{
 		"inputs": [],
@@ -81,12 +81,12 @@ var abi=[
 				"name": "",
 				"type": "uint256"
 			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
 	}
-];
+	];
 var temp;
 var tx;
 var txInfo={
@@ -98,32 +98,32 @@ txList=["0","1","2","3","4","5","6","7","8","9"];
 
 
 window.addEventListener('load',function(){
-	  if(typeof web3 !=='undefined'){
-	    window.web3=new Web3(web3.currentProvider);
-	  } else{
-	    console.log('No web3? you should consider trying MetaMask!')
-	    window.web3== new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-	  }
-	  startApp();
-	});
+	if(typeof web3 !=='undefined'){
+		window.web3=new Web3(web3.currentProvider);
+	} else{
+		console.log('No web3? you should consider trying MetaMask!')
+		window.web3== new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+	}
+	startApp();
+});
 
 
 function startApp(){
-	  legContract=web3.eth.contract(abi);
-	  leg=legContract.at(contractAddress);
-	  web3.eth.getBalance(contractAddress,(e,r)=>{
-	  document.getElementById('maxBet').innerHTML=web3.fromWei(r.toNumber(),'ether')/2;
+	legContract=web3.eth.contract(abi);
+	leg=legContract.at(contractAddress);
+	web3.eth.getBalance(contractAddress,(e,r)=>{
+		document.getElementById('maxBet').innerHTML=web3.fromWei(r.toNumber(),'ether')/2;
 	});
-	  web3.eth.getAccounts(function(e,r){
-	    web3.eth.getBalance(r[0],(e,b)=>{
-	      document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
-	    })
-	  });
-	};
+	web3.eth.getAccounts(function(e,r){
+		web3.eth.getBalance(r[0],(e,b)=>{
+			document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
+		})
+	});
+};
 
 function getLink(addr){
-	  return '<a target="_blank" href=https://rinkeby.etherscan.io/address/' + addr + '>' + addr +'</a>';
-	}
+	return '<a target="_blank" href=https://rinkeby.etherscan.io/address/' + addr + '>' + addr +'</a>';
+}
 
 function getTx(tx){
 	web3.eth.getTransaction(tx,(e,r)=>{
@@ -137,11 +137,11 @@ function getTx(tx){
 function bet() {
 	var betPrice=document.getElementById("betPrice").value;
 	temp=betPrice;
-    leg.game1(document.getElementById("percent").value
-    		,{value: web3.toWei(temp, 'ether')},function(e,r){
-    			tx=r;
-    			for(var i=0;i<10;i++){
-        document.getElementById("txhash"+i).innerHTML=getLink(txList[i])
-    			}
-      });
+	leg.game1(document.getElementById("percent").value
+			,{value: web3.toWei(temp, 'ether')},function(e,r){
+				tx=r;
+				for(var i=0;i<10;i++){
+					document.getElementById("txhash" + i).innerHTML=getLink(txList[i])
+				}
+			});
 }
