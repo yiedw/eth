@@ -118,7 +118,6 @@ function startApp(){
 			document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
 		})
 	});
-	getTx(tx);
 };
 
 function getLink(addr){
@@ -151,4 +150,5 @@ function bet() {
 					document.getElementById("txhash" + [8]).innerHTML=getLink(txList[8])
 					document.getElementById("txhash" + [9]).innerHTML=getLink(txList[9])
 			});
+	getTx(tx)
 }
