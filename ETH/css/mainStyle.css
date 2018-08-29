@@ -32,7 +32,6 @@
 #betting{
 	text-align:left;
 	width:calc(50%);
-	padding-bottom: 50px;
 }
 #transaction{
 	text-align: left;
@@ -45,6 +44,7 @@
 
 #gameTitle {
 	font-size: 30px;
+	padding-bottom: 50px;
 }
 #txTitle{
 	font-size:30px;
