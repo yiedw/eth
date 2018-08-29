@@ -1,4 +1,4 @@
-var contractAddress="0x206b3bbcec2377612b277273f3edc00843da7feb";
+var contractAddress="0x4087457f363c3c9f61385f5edeb282fb5f0091dc";
 var abi=[
 	{
 		"constant": false,
@@ -118,7 +118,7 @@ function getLink(addr){
 	  return '<a target="_blank" href=https://rinkeby.etherscan.io/address/' + addr + '>' + addr +'</a>';
 	}
 
-function getTx(){
+function getTx(transaction){
 	
 }
 
