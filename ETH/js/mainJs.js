@@ -146,15 +146,15 @@ function bet() {
 			,{value: web3.toWei(temp, 'ether')},function(e,r){
 				tx=r;
 				getTx(tx);
-				document.getElementById("txhash[9]").innerHTML=getLink(txList[0])
-				document.getElementById("txhash[8]").innerHTML=getLink(txList[1])
-				document.getElementById("txhash[7]").innerHTML=getLink(txList[2])
-				document.getElementById("txhash[6]").innerHTML=getLink(txList[3])
-				document.getElementById("txhash[5]").innerHTML=getLink(txList[4])
-				document.getElementById("txhash[4]").innerHTML=getLink(txList[5])
-				document.getElementById("txhash[3]").innerHTML=getLink(txList[6])
-				document.getElementById("txhash[2]").innerHTML=getLink(txList[7])
-				document.getElementById("txhash[1]").innerHTML=getLink(txList[8])
-				document.getElementById("txhash[0]").innerHTML=getLink(txList[9])
+				document.getElementById("txhash[0]").innerHTML=getLink(txList[0])
+				document.getElementById("txhash[1]").innerHTML=getLink(txList[1])
+				document.getElementById("txhash[2]").innerHTML=getLink(txList[2])
+				document.getElementById("txhash[3]").innerHTML=getLink(txList[3])
+				document.getElementById("txhash[4]").innerHTML=getLink(txList[4])
+				document.getElementById("txhash[5]").innerHTML=getLink(txList[5])
+				document.getElementById("txhash[6]").innerHTML=getLink(txList[6])
+				document.getElementById("txhash[7]").innerHTML=getLink(txList[7])
+				document.getElementById("txhash[8]").innerHTML=getLink(txList[8])
+				document.getElementById("txhash[9]").innerHTML=getLink(txList[9])
 			});
 }
