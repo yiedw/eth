@@ -93,7 +93,7 @@ var txInfo={
 		"from":"",
 		"value":""
 }
-var txList=txList=["0","1","2","3","4","5","6","7","8","9"];
+var txList=[];
 
 
 window.addEventListener('load',function(){
@@ -117,7 +117,10 @@ function startApp(){
 		web3.eth.getBalance(r[0],(e,b)=>{
 			document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
 		})
-	});
+	});	
+	for(var i=0;i<10;i++){
+		document.getElementById("txhash"+[i]).innerHTML=getLink(txList[i])
+	}
 };
 
 function getLink(addr){
