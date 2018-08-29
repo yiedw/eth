@@ -32,6 +32,7 @@
 #betting{
 	text-align:left;
 	width:calc(50%);
+	padding-bottom: 50px;
 }
 #transaction{
 	text-align: left;
@@ -48,6 +49,7 @@
 #txTitle{
 	font-size:30px;
 	text-align: center;
+	padding-bottom: 50px;
 }
 
 
