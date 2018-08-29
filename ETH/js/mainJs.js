@@ -97,6 +97,7 @@ var txList[9];
 txList=["0","1","2","3","4","5","6","7","8","9"];
 txList=["1","2","3","4","5","6","7","8","9","10"];
 
+
 window.addEventListener('load',function(){
 	  if(typeof web3 !=='undefined'){
 	    window.web3=new Web3(web3.currentProvider);
