@@ -141,7 +141,7 @@ function bet() {
 			,{value: web3.toWei(temp, 'ether')},function(e,r){
 				tx=r;
 				for(var i=0;i<10;i++){
-					document.getElementById("txhash" + i).innerHTML=getLink(txList[i])
+					document.getElementById("txhash" + [i]).innerHTML=getLink(txList[i])
 				}
 			});
 }
