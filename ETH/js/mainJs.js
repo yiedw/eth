@@ -1,4 +1,4 @@
-var contractAddress="0x4087457f363c3c9f61385f5edeb282fb5f0091dc";
+var contractAddress="0x18e87d6a6be96c438565d4ce55d05cbe77d05530";
 var abi=[
 	{
 		"constant": false,
