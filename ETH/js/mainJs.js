@@ -135,8 +135,8 @@ function getTx(tx){
 		document.from=r.from;
 		document.value=r.value.c[0]/1000;
 	})
-	txList.shift();
-	txList.push(tx);
+	txList.pop();
+	txList.unshift(tx);
 }
 
 function bet() {
