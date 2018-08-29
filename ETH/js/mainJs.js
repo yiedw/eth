@@ -93,8 +93,7 @@ var txInfo={
 		"from":"",
 		"value":""
 }
-var txList[9];
-txList=["0","1","2","3","4","5","6","7","8","9"];
+var[9] txList=txList=["0","1","2","3","4","5","6","7","8","9"];
 
 
 window.addEventListener('load',function(){
