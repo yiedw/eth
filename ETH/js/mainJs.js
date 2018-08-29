@@ -89,6 +89,13 @@ var abi=[
 ];
 var temp;
 var tx;
+var txInfo={
+		"from":"",
+		"value":""
+}
+var txList[9];
+txList=["0","1","2","3","4","5","6","7","8","9"];
+txList=["1","2","3","4","5","6","7","8","9","10"];
 
 window.addEventListener('load',function(){
 	  if(typeof web3 !=='undefined'){
@@ -118,8 +125,13 @@ function getLink(addr){
 	  return '<a target="_blank" href=https://rinkeby.etherscan.io/address/' + addr + '>' + addr +'</a>';
 	}
 
-function getTx(transaction){
-	
+function getTx(tx){
+	web3.eth.getTransaction(tx,(e,r)=>{
+		document.from=r.from;
+		document.value=r.value.c[0]/1000;
+	})
+	txList.shift();
+	txList.push(tx);
 }
 
 function bet() {
@@ -128,6 +140,8 @@ function bet() {
     leg.game1(document.getElementById("percent").value
     		,{value: web3.toWei(temp, 'ether')},function(e,r){
     			tx=r;
-        document.getElementById("txhash").innerHTML=getLink(tx)
+    			for(var i=0;i<10;i++){
+        document.getElementById("txhash"+i).innerHTML=getLink(txList[i])
+    			}
       });
 }
