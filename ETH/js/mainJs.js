@@ -119,7 +119,10 @@ function startApp(){
 		})
 	});	
 	for(var i=0;i<10;i++){
-		document.getElementById("txhash"+[i]).innerHTML=getLink(txList[i])
+		if (txList[i]!=null){
+			document.getElementById("txhash"+[i]).innerHTML=getLink(txList[i])
+		}
+
 	}
 };
 
