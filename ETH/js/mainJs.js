@@ -119,6 +119,7 @@ function startApp(){
 			document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
 		})
 	});
+	getTx(tx);
 };
 
 function getLink(addr){
@@ -140,8 +141,15 @@ function bet() {
 	leg.game1(document.getElementById("percent").value
 			,{value: web3.toWei(temp, 'ether')},function(e,r){
 				tx=r;
-				for(var i=0;i<10;i++){
-					document.getElementById("txhash" + [i]).innerHTML=getLink(txList[i])
-				}
+					document.getElementById("txhash" + [0]).innerHTML=getLink(txList[0])
+					document.getElementById("txhash" + [1]).innerHTML=getLink(txList[1])
+					document.getElementById("txhash" + [2]).innerHTML=getLink(txList[2])
+					document.getElementById("txhash" + [3]).innerHTML=getLink(txList[3])
+					document.getElementById("txhash" + [4]).innerHTML=getLink(txList[4])
+					document.getElementById("txhash" + [5]).innerHTML=getLink(txList[5])
+					document.getElementById("txhash" + [6]).innerHTML=getLink(txList[6])
+					document.getElementById("txhash" + [7]).innerHTML=getLink(txList[7])
+					document.getElementById("txhash" + [8]).innerHTML=getLink(txList[8])
+					document.getElementById("txhash" + [9]).innerHTML=getLink(txList[9])
 			});
 }
