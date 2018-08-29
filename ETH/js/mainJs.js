@@ -93,7 +93,7 @@ var txInfo={
 		"from":"",
 		"value":""
 }
-var txList;
+var txList[];
 
 
 window.addEventListener('load',function(){
