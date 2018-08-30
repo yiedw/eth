@@ -123,7 +123,7 @@ function startApp(){
 		})
 	});	
 	for(var i=0;i<10;i++){
-		if (txList[i]!=null){
+		if (txhash[i]!=null){
 			document.getElementById("txhash"+[i]).innerHTML=getLink(txList[i])
 		}
 	}
