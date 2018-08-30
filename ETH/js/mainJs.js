@@ -93,7 +93,11 @@ var txInfo={
 		"from":"",
 		"value":""
 }
-var txList=[];
+var tempTxList=[];
+	
+var txhash=localStorage.getItem("tx");
+
+
 
 
 window.addEventListener('load',function(){
@@ -122,7 +126,6 @@ function startApp(){
 		if (txList[i]!=null){
 			document.getElementById("txhash"+[i]).innerHTML=getLink(txList[i])
 		}
-
 	}
 };
 
@@ -134,9 +137,21 @@ function getTx(tx){
 	web3.eth.getTransaction(tx,(e,r)=>{
 		document.from=r.from;
 		document.value=r.value.c[0]/1000;
-	})
-	txList.pop();
-	txList.unshift(tx);
+	});
+	
+	
+//	tempTxList.unshift(tx);
+//	if(tempTxList.length>11){
+//		tempTxList.pop();
+//	}
+	
+	txhash.unshift(tx);
+	if(txhash.length>11){
+		txhash.pop();
+	}
+	
+	localStorage.setItem("tx",txhash);
+	
 }
 
 function bet() {
