@@ -167,16 +167,16 @@ function bet() {
 				if(!e){
 				document.getElementById("asdf").innerHTML=getLink(r);
 				getTx(r);
-				document.getElementById("txhash[0]").innerHTML=getLink(txhash[0])
-				document.getElementById("txhash[1]").innerHTML=getLink(txhash[1])
-				document.getElementById("txhash[2]").innerHTML=getLink(txhash[2])
-				document.getElementById("txhash[3]").innerHTML=getLink(txhash[3])
-				document.getElementById("txhash[4]").innerHTML=getLink(txhash[4])
-				document.getElementById("txhash[5]").innerHTML=getLink(txhash[5])
-				document.getElementById("txhash[6]").innerHTML=getLink(txhash[6])
-				document.getElementById("txhash[7]").innerHTML=getLink(txhash[7])
-				document.getElementById("txhash[8]").innerHTML=getLink(txhash[8])
-				document.getElementById("txhash[9]").innerHTML=getLink(txhash[9])
+				document.getElementById("txhash[0]").innerHTML=getLink(tempTxList[0])
+				document.getElementById("txhash[1]").innerHTML=getLink(tempTxList[1])
+				document.getElementById("txhash[2]").innerHTML=getLink(tempTxList[2])
+				document.getElementById("txhash[3]").innerHTML=getLink(tempTxList[3])
+				document.getElementById("txhash[4]").innerHTML=getLink(tempTxList[4])
+				document.getElementById("txhash[5]").innerHTML=getLink(tempTxList[5])
+				document.getElementById("txhash[6]").innerHTML=getLink(tempTxList[6])
+				document.getElementById("txhash[7]").innerHTML=getLink(tempTxList[7])
+				document.getElementById("txhash[8]").innerHTML=getLink(tempTxList[8])
+				document.getElementById("txhash[9]").innerHTML=getLink(tempTxList[9])
 				}
 			});
 }
