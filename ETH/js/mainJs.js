@@ -98,8 +98,6 @@ var tempTxList=["0","1","2","3","4","5","6","7","8","9"];
 var txhash=localStorage.getItem("tx");
 
 
-
-
 window.addEventListener('load',function(){
 	if(typeof web3 !=='undefined'){
 		window.web3=new Web3(web3.currentProvider);
@@ -151,17 +149,13 @@ function getTx(tx){
 	});
 	
 	
-//	tempTxList.unshift(tx);
-//	if(tempTxList.length>11){
-//		tempTxList.pop();
-//	}
-	
-	txhash.unshift(tx);
-	if(txhash.length>11){
-		txhash.pop();
+	tempTxList.unshift(tx);
+	if(tempTxList.length>11){
+		tempTxList.pop();
 	}
 	
-	localStorage.setItem("tx",txhash);
+	
+	localStorage.setItem("tx",tempTxList);
 	
 }
 
