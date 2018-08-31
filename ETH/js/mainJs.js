@@ -94,8 +94,11 @@ var txInfo={
 		"value":""
 }
 var tempTxList=[];
-	
-var txhash=localStorage.getItem("tx");
+var txhash=[];
+for(var i=0;i<11;i++){
+	txhash[i]=localStorage.getItem("tx"+i);
+}	
+
 
 
 window.addEventListener('load',function(){
@@ -154,9 +157,9 @@ function getTx(tx){
 		tempTxList.pop();
 	}
 	
-	
-	localStorage.setItem("tx",tempTxList);
-	
+	for(var i=0;i<11;i++){
+	localStorage.setItem("tx"+i,tempTxList[i]);
+	}
 }
 
 function bet() {
