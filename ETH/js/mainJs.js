@@ -93,7 +93,7 @@ var txInfo={
 		"from":"",
 		"value":""
 }
-var tempTxList=[];
+var tempTxList=["0","1","2","3","4","5","6","7","8","9"];
 	
 var txhash=localStorage.getItem("tx");
 
@@ -122,11 +122,22 @@ function startApp(){
 			document.getElementById('accountMount').innerHTML=web3.fromWei(b.toNumber(),'ether');
 		})
 	});	
-	for(var i=0;i<10;i++){
-		if (txhash[i]!=null){
-			document.getElementById("txhash"+[i]).innerHTML=getLink(txList[i])
-		}
-	}
+//	for(var i=0;i<10;i++){
+//		IF (TXHASH[I]!=NULL){
+//			DOCUMENT.GETELEMENTBYID("TXHASH"+[I]).INNERHTML=GETLINK(TXLIST[I])
+//		}
+//	}
+	document.getElementById("txhash[0]").innerHTML=getLink(txList[0])
+	document.getElementById("txhash[1]").innerHTML=getLink(txList[1])
+	document.getElementById("txhash[2]").innerHTML=getLink(txList[2])
+	document.getElementById("txhash[3]").innerHTML=getLink(txList[3])
+	document.getElementById("txhash[4]").innerHTML=getLink(txList[4])
+	document.getElementById("txhash[5]").innerHTML=getLink(txList[5])
+	document.getElementById("txhash[6]").innerHTML=getLink(txList[6])
+	document.getElementById("txhash[7]").innerHTML=getLink(txList[7])
+	document.getElementById("txhash[8]").innerHTML=getLink(txList[8])
+	document.getElementById("txhash[9]").innerHTML=getLink(txList[9])
+	
 };
 
 function getLink(addr){
