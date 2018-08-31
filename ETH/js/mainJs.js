@@ -170,6 +170,7 @@ function bet() {
 	temp=betPrice;
 	leg.game1(document.getElementById("percent").value
 			,{value: web3.toWei(temp, 'ether')},function(e,r){
+				console.log(r);
 				tx=r;
 				getTx(tx);
 				document.getElementById("txhash[0]").innerHTML=getLink(txList[0])
