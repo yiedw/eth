@@ -170,6 +170,7 @@ function bet() {
 	temp=betPrice;
 	leg.game1(document.getElementById("percent").value
 			,{value: web3.toWei(temp, 'ether')},function(e,r){
+				if(!e){
 				getTx(r);
 				document.getElementById("txhash[0]").innerHTML=getLink(txhash[0])
 				document.getElementById("txhash[1]").innerHTML=getLink(txhash[1])
@@ -181,5 +182,6 @@ function bet() {
 				document.getElementById("txhash[7]").innerHTML=getLink(txhash[7])
 				document.getElementById("txhash[8]").innerHTML=getLink(txhash[8])
 				document.getElementById("txhash[9]").innerHTML=getLink(txhash[9])
+				}
 			});
 }
