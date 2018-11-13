@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title> </title>
+</head>
+<style>
+#nav{
+  list-style-type: none;
+  height: 45px;
+  padding: 6px 7px;
+  margin: 0px;
+  background: #D1B2FF;
+  border-radius: 1.5em;
+
+}
+
+#nav li{
+  float: left;
+  position: relative;
+  margin: 5px; 10px;
+  padding: 0;
+}
+
+#nav li a{
+  display: block;
+  font-family: "굴림";
+  font-weight: 600;
+  font-size: 1em;
+  padding: 10px 20px;
+  color: #red;
+  text-decoration: none;
+  margin: 0;
+  border-radius: 1.4em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  text-align: center;
+  width: 100px;
+}
+
+#nav li:hover>a{
+  text-align: center;
+  background:#CEF279;
+  color: #444;
+  text-shadow: 0 1px 1px rgba(255,255,255,1);
+  border-radius: 1.4em;
+  box-shadow:0 1px 1px rgba(0,0,0,0.2);
+}
+#nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  background: #ebebeb;
+  border: 1px solid #blue;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  opacity: 0;
+}
+#nav ul li{
+  float: none;
+  margin: 0;
+  padding:0;
+  height: 0;
+}
+#nav ul li:hover> a{
+  border-radius: 8px;
+
+}
+#nav li:hover ul {
+  opacity: 1;
+}
+
+#nav li:hover ul li{
+  height: 35px;
+  padding: 0;
+}
+
+
+</style>
+
+<body>
+<ul id="nav">
+  <li> <a href="#"> 병원소개</a>
+    <ul>
+      <li> <a href="#"> 1 </a></li>
+      <li> <a href="#"> 2 </a></li>
+      <li> <a href="#"> 3 </a></li>
+      <li> <a href="#"> 4 </a></li>
+    </ul>
+  </li>
+
+
+  <li> <a href="#"> 진료안내</a>
+    <ul>
+        <li> <a href="#"> 1 </a></li>
+        <li> <a href="#"> 2 </a></li>
+        <li> <a href="#"> 3 </a></li>
+        <li> <a href="#"> 4 </a></li>
+      </ul>
+    </li>
+  <li> <a href="#"> 의학정보</a>
+    <ul>
+        <li> <a href="#"> 1 </a></li>
+        <li> <a href="#"> 2 </a></li>
+        <li> <a href="#"> 3 </a></li>
+        <li> <a href="#"> 4 </a></li>
+      </ul>
+  </li>
+  <li> <a href="#"> 예약하기</a>
+    <ul>
+        <li> <a href="#"> 1 </a></li>
+        <li> <a href="#"> 2 </a></li>
+        <li> <a href="#"> 3 </a></li>
+        <li> <a href="#"> 4 </a></li>
+      </ul>
+  </li>
+  <li> <a href="#"> 게시판</a>
+    <ul>
+        <li> <a href="#"> 1 </a></li>
+        <li> <a href="#"> 2 </a></li>
+        <li> <a href="#"> 3 </a></li>
+        <li> <a href="#"> 4 </a></li>
+      </ul>
+  </li>
+
+</body>
+</html>
